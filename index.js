@@ -38,7 +38,7 @@ client.on("interactionCreate", async interaction => {
                     await interaction.reply(`${interaction.member.user.username} rolled ${rolls}. The total is ${rollTotal} out of ${maxRoll}`);
                     return;
                 }else{
-                    await interaction.reply(`Format is correct, please pass the dice expression in NdM format (eg: 2d8)`);
+                    await interaction.reply(`Format is incorrect, please pass the dice expression in NdM format (eg: 2d8)`);
                     return;
                 }
                 break;
