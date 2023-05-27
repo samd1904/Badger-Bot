@@ -20,6 +20,7 @@ client.on("interactionCreate", async interaction => {
                 await interaction.reply("Pong!");
                 break;
             case 'roll':
+                //TODO: Need to add validations to command options to avoid any code breaking cases
                 if(interaction.options.getString('dice_expression').includes('d')){
                     const optionStrArr = interaction.options.getString('dice_expression').split('d');
                     const dCount = optionStrArr[0];
