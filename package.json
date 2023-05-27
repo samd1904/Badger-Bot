@@ -1,6 +1,7 @@
 {
   "name": "badger-bot",
   "version": "1.0.0",
+  "author": "Saumya Darne",
   "type":"module",
   "description": "",
   "main": "index.js",
