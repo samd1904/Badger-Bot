@@ -11,13 +11,25 @@ const commands = [
         description: 'Roll a dice',
         options:[
             {
-                name:"dice_expression",
-                description: "The dice expression in the format NdM (eg: 1d8)",
+                name: 'dice_expression',
+                description: 'The dice expression in the format NdM (eg: 1d8)',
                 type: 3,
-                required: "true"
+                required: true
             }
         ]
     },
+    {
+        name: 'find-deal':
+        description: 'Find any ongoing deals on a game',
+        options:[
+            {
+                name: 'game',
+                description: 'Name of the game to find a deal for',
+                type: 3,
+                required: true
+            }   
+        ]
+    }
 ];
 
 const rest = new REST({ version: '10' }).setToken(process.env.BOT_TOKEN);

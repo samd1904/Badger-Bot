@@ -42,6 +42,10 @@ client.on("interactionCreate", async interaction => {
                     return;
                 }
                 break;
+            case 'find-deal':
+                const gameString = interaction.options.getString('game');
+                
+                break;
         }
     }catch(error){
         console.error(error.message);
