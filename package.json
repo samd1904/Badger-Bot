@@ -1,8 +1,8 @@
 {
   "name": "badger-bot",
   "version": "1.0.0",
-  "author": "Saumya Darne",
-  "type":"module",
+  "author": "",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,9 +11,9 @@
     "reg": "node register.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.4.0",
     "discord.js": "^14.11.0",
     "dotenv": "^16.0.3"
   }
