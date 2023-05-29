@@ -19,7 +19,7 @@ const commands = [
         ]
     },
     {
-        name: 'find-deal':
+        name: 'find-deal',
         description: 'Find any ongoing deals on a game',
         options:[
             {
