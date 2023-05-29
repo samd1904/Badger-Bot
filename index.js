@@ -1,5 +1,6 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import dotenv from "dotenv";
+import axios from 'axios';
+import dotenv from 'dotenv';
 dotenv.config();
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -42,9 +43,22 @@ client.on("interactionCreate", async interaction => {
                     return;
                 }
                 break;
+            case 'find-deal':
+                const gameString = interaction.options.getString('game');
+                const url = process.env.CHEAP_SHARK_DEAL_URL+gameString;
+                const baseUrl = process.env.CHEAP_SHARK_BASE_URL;
+                const result = await axios.get(url);
+                let urlString = ""
+                for(let i in result.data){
+                    urlString += `${i}. ${baseUrl+result.data[i].dealID}\n`;
+                }
+                await interaction.reply('Found the following deals!\n');
+                await interaction.followUp(urlString);
+                break;
         }
     }catch(error){
         console.error(error.message);
+        await interaction.followUp("Failed to process command");
         return;
     }
 });
