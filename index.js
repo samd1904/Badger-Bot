@@ -52,12 +52,16 @@ client.on("interactionCreate", async interaction => {
                 for(let i in result.data){
                     urlString += `${i}. ${baseUrl+result.data[i].dealID}\n`;
                 }
+                if(urlString.length>0){
                 await interaction.reply('Found the following deals!\n');
                 await interaction.followUp(urlString);
+                }else{
+                    await interaction.reply('No deals available at the moment!\n');
+                }
                 break;
         }
     }catch(error){
-        console.error(error.message);
+        console.error(error);
         await interaction.followUp("Failed to process command");
         return;
     }
