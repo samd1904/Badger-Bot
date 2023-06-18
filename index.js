@@ -63,7 +63,10 @@ client.on("interactionCreate", async interaction => {
     }catch(error){
         console.error(error.code);
         console.error(error.message);
-        await interaction.followUp("Failed to process command");
+        if(interaction.replied)
+            await interaction.followUp("Failed to process command!");
+        else
+            await interaction.reply("Failed to process command!")
         return;
     }
 });
